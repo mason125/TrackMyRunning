@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link href ="SS.css" type ="text/css" rel="stylesheet">
+        <script src="JS/jquery-3.2.1.min.js"></script>
+        <script src="JS/angular.min.js"></script>
+        <script src="JS/angular-route.js"></script>
+        <script src ="JS/plotly-latest.min.js"></script>
+        <title>Track My Health</title>
+    </head>
+    <body ng-app="unit">
+        <div id ="main">
+            <h1 align ="center"> Track My Running </h1>
+            <a id = "home" href ="#!/"><img src ="pics/home_1.png"/></a>
+            <!-- buttons-->
+            <div align ="center">
+                <a id ="enter" href="#!Enter"><img src ="pics/Enter.png"/></a>
+                <br>
+                <a id ="stats" href ="#!view"><img src ="pics/stats.png"/></a>
+            </div>
+            <br>
+            <div align = "center" ng-view id = "spa"></div>
+        </div>
+        <script src="JS/Menus.js"></script>
+        <script src="JS/Routing.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>

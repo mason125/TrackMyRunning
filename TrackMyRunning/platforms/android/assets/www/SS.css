@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 3, 2018, 12:52:47 AM
+    Author     : Mason
+*/
+body
+{
+    background-color: lightgrey;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td, tr
+{
+    padding: 20px;
+    background-color: white;
+}
+
+a{
+    background-color:white;
+    border: solid;
+    border-color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+}
+
+#home
+{
+    position:absolute;
+    top: 0;
+    left: 0;
+}
+
+#chart
+{
+    width: 350px;
+    height: 200px;
+}
+
+.form
+{
+    background-color: white;
+    color:black;
+    border: 2px solid #000000;
+    padding: 10px 22px;
+}
+
