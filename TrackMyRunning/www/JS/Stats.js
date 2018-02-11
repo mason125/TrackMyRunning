@@ -4,6 +4,16 @@
  * and open the template in the editor.
  */
 "using strict";
+
+$("#enterForm").on('click', () =>{
+    var dist = $("#val").val();
+	alert(dist);
+    $.post("http://running-env.us-east-2.elasticbeanstalk.com", {distance:dist}).done(function(data){
+            alert("Update Complete");
+    }); 
+});
+
+//chart
 TESTER = document.getElementById('chart');
 Plotly.plot( TESTER, [{
 x: [1, 2, 3, 4, 5],

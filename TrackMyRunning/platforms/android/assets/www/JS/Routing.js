@@ -11,14 +11,16 @@ const app = angular.module("unit", ["ngRoute"]);
 
 app.config(function($routeProvider) {
     $routeProvider
+    //main page
     .when("/", {
         template: ""
     })
+    //enter data
     .when("/Enter", {
         templateUrl : "views/Enter.html"
     })
+    //stats
     .when("/view",{
         templateUrl: "views/view.html"
- 
     });
 });

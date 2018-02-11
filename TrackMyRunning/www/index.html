@@ -4,10 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <link href ="SS.css" type ="text/css" rel="stylesheet">
-        <script src="JS/jquery-3.2.1.min.js"></script>
-        <script src="JS/angular.min.js"></script>
-        <script src="JS/angular-route.js"></script>
-        <script src ="JS/plotly-latest.min.js"></script>
+        <script src="JS/depend/jquery-3.2.1.min.js"></script>
+        <script src="JS/depend/angular.min.js"></script>
+        <script src="JS/depend/angular-route.js"></script>
+        <script src ="JS/depend/plotly-latest.min.js"></script>
+        <script src="https://mysqljs.com/mysql.js"></script>
         <title>Track My Running</title>
     </head>
     <body ng-app="unit">
@@ -23,6 +24,7 @@
             <br>
             <div align = "center" ng-view id = "spa"></div>
         </div>
+        <script src="JS/db.js"></script>
         <script src="JS/Menus.js"></script>
         <script src="JS/Routing.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
