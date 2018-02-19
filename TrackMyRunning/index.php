@@ -1,29 +1,35 @@
 <?php
 
-if($_SERVER["REQUEST_METHOD"] == "POST")
+//database connection data
+$host = "localhost"; 
+$user = "root"; 
+$password = ""; 
+$dbname = "RUNNING"; 
+
+//holds select * query data
+$data = array();
+
+//collect data passed from frontend
+$choice = $_GET["choice"];
+$distance = $_GET["distance"];
+
+//connection 
+$con = mysqli_connect($host, $user, $password,$dbname);
+if (!$con) {
+ die("Connection failed: " . mysqli_connect_error());
+}
+
+//collect data from database
+if($choice == 1)
 {
-	
-	//vars
-	$input = $_POST["distance"];
-    $server = "running.c3oh1iodvwvi.us-east-2.rds.amazonaws.com";
-	$username = "maswhite";
-	$password = "kTmlord0302!";
-	$db = "RUNNING";
-	
-	//connections
-	$conn = new mysqli($server, $username, $password, $db);
-	
-	if($conn -> connect_error)
-	{
-		echo($conn->connect_error);
+    $sel = mysqli_query($con, "SELECT * FROM distance");
+    while ($row = mysqli_fetch_array($sel)) {
+        $data[] = array("CDATE"=>$row['CDATE'],"DISTANCE"=>$row['DISTANCE']);
     }
-	
-	$query = "INSERT INTO distance (CDATE, DISTANCE) VALUES (CURDATE()-1," . $input.");";
-	mysqli_query($conn,$query);
-	/*
-	$query -> _parm("i", $input);
-	$query -> execute();
-	$query -> close();
-	$conn -> close();
-	*/
+    echo json_encode($data);
+}
+//insert data into database
+elseif($choice == 2)
+{
+    mysqli_query($con,"INSERT INTO distance (CDATE, DISTANCE) values (NOW(), '$distance');");
 }

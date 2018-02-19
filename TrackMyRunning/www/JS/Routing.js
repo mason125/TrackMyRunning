@@ -5,11 +5,11 @@
  */
 "use strict";
 
-//only use angular for the routing
 //module only one therefore leve it here 
-const app = angular.module("unit", ["ngRoute"]);
+angular.module("unit", ["ngRoute"]);
 
-app.config(function($routeProvider) {
+//routing
+angular.module('unit').config(function($routeProvider) {
     $routeProvider
     //main page
     .when("/", {

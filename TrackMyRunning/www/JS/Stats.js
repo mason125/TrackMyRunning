@@ -1,21 +1,41 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-"using strict";
 
-$("#enterForm").on('click', () =>{
-    var dist = $("#val").val();
-	alert(dist);
-    $.post("http://running-env.us-east-2.elasticbeanstalk.com", {distance:dist}).done(function(data){
-            alert("Update Complete");
-    }); 
-});
+"use strict";
+
+//ajax
+angular.module('unit').controller('userCtrl', ['$scope', '$http', function ($scope, $http) {
+        //select query
+    $scope.out = () =>{
+        //put " " padding for select query
+        $http.get('p.php',{params:{"choice": 1, "distance":" "}}).then(function successCallback(response) {
+            // Store response data
+            $scope.users = response.data;
+        });
+    };
+    
+    //insert query
+    $scope.in = () =>{
+        let dist = $("#val").val();
+        $http.get('p.php',{params:{"choice": 2, "distance":dist}}).then(function successCallback(response){
+               alert("Update Complete");
+        });
+    };
+}]);
+/*
+$("#stats").on('click',() =>{   
+   // arry = [];
+   $.post("p.php", {option:"2"}).done(function(data){
+       document.getElementById("table").innerHTML = data;
+       
+   });
+   
+   setTimeout(()=>{
+    const TESTER = document.getElementById('chart');
+    Plotly.plot( TESTER, [{
+    x: [1, 2, 4, 8, 16] ,
+    y: [1,2,232,422,1] }], {
+    margin: { t: 0 } } );
+},100);
+});*/
+
 
 //chart
-TESTER = document.getElementById('chart');
-Plotly.plot( TESTER, [{
-x: [1, 2, 3, 4, 5],
-y: [1, 2, 4, 8, 16] }], {
-margin: { t: 0 } } );

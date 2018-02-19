@@ -4,10 +4,25 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<div id ="chart" align = "center"></div>
-<br>
-<table>
-    <th>Date</th>
-    <th>Distance</th>
-</table>
-<script src ="JS/Stats.js"></script>
+<div ng-controller="userCtrl">
+    <div id ="chart" align = "center"></div>
+    <button class ="form" id ="enterForm" ng-click = "out()">Distances</button>
+
+    <h2>Your Stats</h2>
+
+      <table>
+
+      <tr>
+          <th>Distance</th>
+          <th>Last</th>
+      </tr>
+
+      <!-- Display records -->
+      <tr ng-repeat="user in users">
+            <td>{{user.CDATE}}</td>
+            <td>{{user.DISTANCE}}</td>
+      </tr>
+
+      </table>
+</div>
+<script src ="JS/Routing.js"></script>
