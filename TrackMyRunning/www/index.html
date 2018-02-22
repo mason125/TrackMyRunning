@@ -11,21 +11,24 @@
         <title>Track My Running</title>
     </head>
     <body ng-app="unit">
+        <h1 align ="center"> Track My Running </h1>
+        <div id ="login" align ="center">
+            Username: <input class ="form" id ="username" type="text"/><br><br>
+            Password: <input class ="form" id ="password" type="text"/><br><br>     
+            <button id ="login_btn" class = "form">Login</button>
+            <button id ="register" class = "form">Register</button>
+        </div>
         <div id ="main">
-            <h1 align ="center"> Track My Running </h1>
             <a id = "home" href ="#!/"><img src ="pics/home_1.png"/></a>
             <!-- buttons-->
             <div align ="center" ng-controller="userCtrl">
                 <a id ="enter" href="#!Enter"><img src ="pics/Enter.png"/></a>
                 <br>
-                <a id ="stats" href ="#!view" ng-click = "out()"><img src ="pics/stats.png"/></a>
+                <a id ="stats" href ="#!view" ng-click="click()"><img src ="pics/stats.png"/></a>
             </div>
-            <br>
-            
-            <div align = "center" ng-view id = "spa"></div>
-             
+            <div align = "center" ng-view id = "spa"></div>            
         </div>
-        <script src="JS/db.js"></script>
+        <script src="JS/Login.js"></script>
         <script src="JS/Menus.js"></script>
         <script src="JS/Routing.js"></script>
         <script src="JS/Stats.js"></script>

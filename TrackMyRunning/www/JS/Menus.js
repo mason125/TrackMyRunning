@@ -1,5 +1,4 @@
 "use strict";
-
 //show enter page
 $("#enter").on("click",() => $("#stats").hide());
 
@@ -10,6 +9,22 @@ $("#stats").on("click", () => $("#enter").hide());
 $("#home").on("click", () => {
     $("#enter").show();
     $("#stats").show();
+});
+
+//hide data display
+$("#table").hide();
+$("#avg_display").hide();
+
+
+//view menu
+$("#chart_btn").on("click",() => {
+    $("#table").show();
+    $("#avg_display").hide();
+});
+
+$("#avg").on("click",() => {
+    $("#table").hide();
+    $("#avg_display").show();
 });
 
 

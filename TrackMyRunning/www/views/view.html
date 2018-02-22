@@ -4,25 +4,30 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<div ng-controller="userCtrl">
-    <div id ="chart" align = "center"></div>
-    <button class ="form" id ="enterForm" ng-click = "out()">Distances</button>
 
-    <h2>Your Stats</h2>
-
-      <table>
-
-      <tr>
-          <th>Distance</th>
-          <th>Last</th>
-      </tr>
-
-      <!-- Display records -->
-      <tr ng-repeat="user in users">
-            <td>{{user.CDATE}}</td>
-            <td>{{user.DISTANCE}}</td>
-      </tr>
-
-      </table>
+<div  ng-controller="userCtrl">
+    <button id = "avg" ng-click ="click()" class = "form">Stats</button>
+    <button id ="chart_btn" ng-click ="click()" class = "form">Chart</button>
+    <br>
+    <div id = "avg_display">
+        <h2>Your Stats</h2>
+        <h3>Min Distance:{{min}} &nbsp;Avg Distance:{{average_dist}} &nbsp;Max Distance:{{max}}</h3>
+    </div>
+    <div id="table">
+        <h2>Your Log</h2>
+        <table>
+          <tr>
+              <th>Date</th>
+              <th>Distance</th>
+          </tr>
+          <!-- Display records -->
+          <tr ng-repeat="user in users">
+                <td>{{user.CDATE}}</td>
+                <td>{{user.DISTANCE}}</td>
+          </tr>
+          </table>
+    </div>
 </div>
+<script src ="JS/Stats.js"></script>
+<script src ="JS/Menus.js"></script>
 <script src ="JS/Routing.js"></script>
